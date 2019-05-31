@@ -25,6 +25,9 @@ import java.util.List;
  * @author github.com/doomsdayrs
  */
 public interface Formatter {
+
+    int getID();
+
     /**
      * Returns true if the chapter list on the page requires another reload
      *
