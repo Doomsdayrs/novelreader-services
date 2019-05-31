@@ -72,9 +72,9 @@ public abstract class ScrapeFormat implements Formatter {
 
     public abstract String getNovelPassage(String URL) throws IOException;
 
-    public abstract NovelPage parseNovel(String URL) throws IOException;
+    public abstract com.github.Doomsdayrs.api.novelreader_core.services.NovelPage parseNovel(String URL) throws IOException;
 
-    public abstract NovelPage parseNovel(String URL, int increment) throws IOException;
+    public abstract com.github.Doomsdayrs.api.novelreader_core.services.NovelPage parseNovel(String URL, int increment) throws IOException;
 
     public abstract String getLatestURL(int page);
 
