@@ -1,4 +1,5 @@
-package com.github.Doomsdayrs.api.novelreader_core.services;
+package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
+
 /**
  * This file is part of novelreader-core.
  * novelreader-core is free software: you can redistribute it and/or modify
@@ -13,12 +14,21 @@ package com.github.Doomsdayrs.api.novelreader_core.services;
  * along with novelreader-core.  If not, see <https://www.gnu.org/licenses/>.
  * ====================================================================
  * novelreader-core
- * 30 / May / 2019
+ * 29 / May / 2019
  *
  * @author github.com/doomsdayrs
  */
-public enum Stati {
-    PUBLISHING(),
-    COMPLETED(),
-    PAUSED();
+public class Novel {
+    public String title;
+    public String link;
+    public String imageURL;
+
+    @Override
+    public String toString() {
+        return "Novel{" +
+                "title='" + title + '\'' +
+                ", link='" + link + '\'' +
+                ", imageURL='" + imageURL + '\'' +
+                '}';
+    }
 }

@@ -1,4 +1,7 @@
-package com.github.Doomsdayrs.api.novelreader_core.services;
+package com.github.Doomsdayrs.api.novelreader_core.services.core.dep;
+
+import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.Novel;
+import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.NovelPage;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.ResponseBody;
@@ -72,9 +75,9 @@ public abstract class ScrapeFormat implements Formatter {
 
     public abstract String getNovelPassage(String URL) throws IOException;
 
-    public abstract com.github.Doomsdayrs.api.novelreader_core.services.NovelPage parseNovel(String URL) throws IOException;
+    public abstract NovelPage parseNovel(String URL) throws IOException;
 
-    public abstract com.github.Doomsdayrs.api.novelreader_core.services.NovelPage parseNovel(String URL, int increment) throws IOException;
+    public abstract NovelPage parseNovel(String URL, int increment) throws IOException;
 
     public abstract String getLatestURL(int page);
 

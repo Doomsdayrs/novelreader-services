@@ -1,4 +1,5 @@
-package com.github.Doomsdayrs.api.novelreader_core.services;
+package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
+
 /**
  * This file is part of novelreader-core.
  * novelreader-core is free software: you can redistribute it and/or modify

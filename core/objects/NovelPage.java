@@ -1,4 +1,7 @@
-package com.github.Doomsdayrs.api.novelreader_core.services;
+package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
+
+import com.github.Doomsdayrs.api.novelreader_core.services.core.dep.Stati;
+
 import java.util.Arrays;
 import java.util.List;
 

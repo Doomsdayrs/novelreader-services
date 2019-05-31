@@ -1,4 +1,8 @@
-package com.github.Doomsdayrs.api.novelreader_core.services;
+package com.github.Doomsdayrs.api.novelreader_core.services.core.dep;
+
+import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.Novel;
+import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.NovelPage;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -42,7 +46,7 @@ public interface Formatter {
      * @param URL Incoming Novel page URL to parse
      * @return NovelPage object with as many parameters filled as possible;
      */
-   NovelPage parseNovel(String URL) throws IOException;
+    NovelPage parseNovel(String URL) throws IOException;
 
     /**
      * the above, except if isIncrementingChapterList() returns true this will be used in its stead
