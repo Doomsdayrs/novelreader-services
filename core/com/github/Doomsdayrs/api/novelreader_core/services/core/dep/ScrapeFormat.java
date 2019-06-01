@@ -33,25 +33,30 @@ import java.util.List;
  */
 public abstract class ScrapeFormat implements Formatter {
 
+    private final int ID;
     private Request.Builder builder;
     private OkHttpClient client;
 
-    public ScrapeFormat() {
+    public ScrapeFormat(int id) {
+        ID = id;
         this.builder = new Request.Builder();
         this.client = new OkHttpClient();
     }
 
-    public ScrapeFormat(Request.Builder builder) {
+    public ScrapeFormat(int id, Request.Builder builder) {
+        ID = id;
         this.builder = builder;
         this.client = new OkHttpClient();
     }
 
-    public ScrapeFormat(OkHttpClient client) {
+    public ScrapeFormat(int id, OkHttpClient client) {
+        ID = id;
         this.builder = new Request.Builder();
         this.client = client;
     }
 
-    public ScrapeFormat(Request.Builder builder, OkHttpClient client) {
+    public ScrapeFormat(int id, Request.Builder builder, OkHttpClient client) {
+        ID = id;
         this.builder = builder;
         this.client = client;
     }
@@ -70,6 +75,12 @@ public abstract class ScrapeFormat implements Formatter {
 
 
     // Methods below override the formatter classes methods
+
+    public int getID(){
+        return ID;
+    }
+
+    public abstract String getImageURL();
 
     public abstract boolean isIncrementingChapterList();
 

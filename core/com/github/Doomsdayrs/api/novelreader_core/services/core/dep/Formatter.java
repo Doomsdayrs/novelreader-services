@@ -26,6 +26,16 @@ import java.util.List;
  */
 public interface Formatter {
 
+    /**
+     * @return Image URL of the parser, yes it can be custom
+     */
+    String getImageURL();
+
+    /**
+     * Set int ID as param in constructor and pass it up to the ScrapeFormat
+     *
+     * @return Formatter ID
+     */
     int getID();
 
     /**

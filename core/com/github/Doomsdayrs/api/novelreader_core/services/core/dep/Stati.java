@@ -21,5 +21,5 @@ package com.github.Doomsdayrs.api.novelreader_core.services.core.dep;
 public enum Stati {
     PUBLISHING(),
     COMPLETED(),
-    PAUSED();
+    PAUSED()
 }
