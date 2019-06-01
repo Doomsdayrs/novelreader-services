@@ -6,7 +6,7 @@
 
     <groupId>com.github.Doomsdayrs.api</groupId>
     <artifactId>novelreader-services</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <build>
         <sourceDirectory>core</sourceDirectory>
         <plugins>

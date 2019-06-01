@@ -27,6 +27,11 @@ import java.util.List;
 public interface Formatter {
 
     /**
+     * @return Name of the class
+     */
+    String getName();
+
+    /**
      * @return Image URL of the parser, yes it can be custom
      */
     String getImageURL();

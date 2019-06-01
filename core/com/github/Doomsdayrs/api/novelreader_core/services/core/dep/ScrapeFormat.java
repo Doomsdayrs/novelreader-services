@@ -74,11 +74,13 @@ public abstract class ScrapeFormat implements Formatter {
     }
 
 
-    // Methods below override the formatter classes methods
-
     public int getID(){
         return ID;
     }
+
+    // Methods below override the formatter classes methods
+
+    public abstract String getName();
 
     public abstract String getImageURL();
 
