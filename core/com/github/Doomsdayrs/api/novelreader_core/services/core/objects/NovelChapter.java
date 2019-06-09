@@ -20,7 +20,7 @@ package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
  */
 public class NovelChapter {
     public String release = "";
-    public int chapterNum = -99;
+    public String chapterNum = "";
     public String link = "";
 
     @Override
