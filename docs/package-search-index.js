@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.github.Doomsdayrs.api.novelreader_core.services.core.dep"},{"l":"com.github.Doomsdayrs.api.novelreader_core.services.core.objects"}]
