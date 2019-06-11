@@ -69,12 +69,34 @@ public abstract class ScrapeFormat implements Formatter {
         return client.newCall(request).execute().body();
     }
 
+    /**
+     * Parses website to a Document
+     *
+     * @param URL URL to scrape
+     * @return Document
+     * @throws IOException if anything goes wrong
+     */
     protected Document docFromURL(String URL) throws IOException {
         return Jsoup.parse(request(URL).string());
     }
 
+    protected static String verify(String baseURL, String target) {
+        int a = baseURL.length();
+        int b = target.length();
+        if (a < b) {
+            String segment = target.substring(0, a);
+            if (!segment.equals(baseURL))
+                return baseURL + target;
+            else return target;
+        } else return baseURL + target;
+    }
 
-    public int getID(){
+    public static void main(String[] args) {
+        verify("https", "https...");
+    }
+
+
+    public int getID() {
         return ID;
     }
 
