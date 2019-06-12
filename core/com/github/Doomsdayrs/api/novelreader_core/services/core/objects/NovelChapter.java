@@ -13,12 +13,13 @@ import java.io.Serializable;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with novelreader-core.  If not, see <https://www.gnu.org/licenses/>.
+ * along with novelreader-core.  If not, see https://www.gnu.org/licenses/.
  * ====================================================================
  * novelreader-core
  * 29 / May / 2019
  *
  * @author github.com/doomsdayrs
+ * @noinspection WeakerAccess
  */
 public class NovelChapter implements Serializable {
     public String release = "";

@@ -13,12 +13,13 @@ import java.io.Serializable;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with novelreader-core.  If not, see <https://www.gnu.org/licenses/>.
+ * along with novelreader-core.  If not, see https://www.gnu.org/licenses/.
  * ====================================================================
  * novelreader-core
  * 12 / June / 2019
  *
  * @author github.com/doomsdayrs
+ * @noinspection WeakerAccess
  */
 public class NovelGenre implements Serializable {
     public final String name;
@@ -28,7 +29,7 @@ public class NovelGenre implements Serializable {
 
     public NovelGenre(String name, boolean isURL, String type) {
         this.name = name;
-        isURL = false;
+        this.isURL = isURL;
         this.type = type;
     }
 }
