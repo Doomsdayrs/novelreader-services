@@ -1,5 +1,7 @@
 package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
 
+import java.io.Serializable;
+
 /**
  * This file is part of novelreader-core.
  * novelreader-core is free software: you can redistribute it and/or modify
@@ -18,7 +20,7 @@ package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
  *
  * @author github.com/doomsdayrs
  */
-public class Novel {
+public class Novel implements Serializable {
     public String title;
     public String link;
     public String imageURL;

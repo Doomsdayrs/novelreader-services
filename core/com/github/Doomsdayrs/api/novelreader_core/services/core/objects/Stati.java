@@ -16,21 +16,12 @@ import java.io.Serializable;
  * along with novelreader-core.  If not, see <https://www.gnu.org/licenses/>.
  * ====================================================================
  * novelreader-core
- * 29 / May / 2019
+ * 30 / May / 2019
  *
  * @author github.com/doomsdayrs
  */
-public class NovelChapter implements Serializable {
-    public String release = "";
-    public String chapterNum = "";
-    public String link = "";
-
-    @Override
-    public String toString() {
-        return "NovelChapter{" +
-                "release='" + release + '\'' +
-                ", chapterNum=" + chapterNum +
-                ", link='" + link + '\'' +
-                '}';
-    }
+public enum Stati  implements Serializable {
+    PUBLISHING(),
+    COMPLETED(),
+    PAUSED()
 }

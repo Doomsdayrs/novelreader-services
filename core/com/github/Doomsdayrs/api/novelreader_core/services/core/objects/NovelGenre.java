@@ -1,4 +1,6 @@
-package com.github.Doomsdayrs.api.novelreader_core.services.core.dep;
+package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
+
+import java.io.Serializable;
 
 /**
  * This file is part of novelreader-core.
@@ -14,12 +16,19 @@ package com.github.Doomsdayrs.api.novelreader_core.services.core.dep;
  * along with novelreader-core.  If not, see <https://www.gnu.org/licenses/>.
  * ====================================================================
  * novelreader-core
- * 30 / May / 2019
+ * 12 / June / 2019
  *
  * @author github.com/doomsdayrs
  */
-public enum Stati {
-    PUBLISHING(),
-    COMPLETED(),
-    PAUSED()
+public class NovelGenre implements Serializable {
+    public final String name;
+    public boolean isURL;
+
+    public final String type;
+
+    public NovelGenre(String name, boolean isURL, String type) {
+        this.name = name;
+        isURL = false;
+        this.type = type;
+    }
 }

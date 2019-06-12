@@ -1,6 +1,7 @@
 package com.github.Doomsdayrs.api.novelreader_core.services.core.dep;
 
 import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.Novel;
+import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.NovelGenre;
 import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.NovelPage;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ import java.util.List;
  * 30 / May / 2019
  *
  * @author github.com/doomsdayrs
+ * @noinspection unused
  */
 public interface Formatter {
 
@@ -42,6 +44,16 @@ public interface Formatter {
      * @return Formatter ID
      */
     int getID();
+
+    /**
+     * @return Has Search?
+     */
+    boolean hasSearch();
+
+    /**
+     * @return Has Genres?
+     */
+    boolean hasGenres();
 
     /**
      * Returns true if the chapter list on the page requires another reload
@@ -96,6 +108,9 @@ public interface Formatter {
      */
     List<Novel> search(String query) throws IOException;
 
-    //TODO, Ability to have filters, not just queries
-
+    /**
+     * ArrayList of genres site has
+     * @return genres
+     */
+    NovelGenre[] setGenres();
 }

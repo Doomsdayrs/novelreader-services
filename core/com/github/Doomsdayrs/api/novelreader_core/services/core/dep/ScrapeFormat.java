@@ -1,6 +1,7 @@
 package com.github.Doomsdayrs.api.novelreader_core.services.core.dep;
 
 import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.Novel;
+import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.NovelGenre;
 import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.NovelPage;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -69,16 +70,36 @@ public abstract class ScrapeFormat implements Formatter {
         return client.newCall(request).execute().body();
     }
 
+    /** @noinspection unused*/
     protected Document docFromURL(String URL) throws IOException {
         return Jsoup.parse(request(URL).string());
     }
 
 
-    public int getID(){
+    public int getID() {
         return ID;
     }
 
     // Methods below override the formatter classes methods
+
+
+    /**
+     * On default will return true, stating site does have a search feature
+     * @return Has Search?
+     */
+    @Override
+    public boolean hasSearch() {
+        return true;
+    }
+
+    /**
+     * On default will return true, stating site has genres
+     * @return Has genres?
+     */
+    @Override
+    public boolean hasGenres() {
+        return true;
+    }
 
     public abstract String getName();
 
@@ -97,4 +118,6 @@ public abstract class ScrapeFormat implements Formatter {
     public abstract List<Novel> parseLatest(String URL) throws IOException;
 
     public abstract List<Novel> search(String query) throws IOException;
+
+    public abstract NovelGenre[] setGenres();
 }

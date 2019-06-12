@@ -1,7 +1,6 @@
 package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
 
-import com.github.Doomsdayrs.api.novelreader_core.services.core.dep.Stati;
-
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,20 +22,16 @@ import java.util.List;
  *
  * @author github.com/doomsdayrs
  */
-public class NovelPage {
+public class NovelPage implements Serializable {
     public String title;
     public String imageURL;
     public String description;
     public String[] genres;
     public String[] authors;
     public Stati status;
-
-
     public String[] tags;
     public String[] artists;
     public String language;
-
-
     public List<NovelChapter> novelChapters;
 
 
