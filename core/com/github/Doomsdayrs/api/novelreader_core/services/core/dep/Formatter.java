@@ -112,5 +112,5 @@ public interface Formatter {
      * ArrayList of genres site has
      * @return genres
      */
-    NovelGenre[] setGenres();
+    NovelGenre[] getGenres();
 }
