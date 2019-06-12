@@ -154,5 +154,5 @@ public abstract class ScrapeFormat implements Formatter {
 
     public abstract List<Novel> search(String query) throws IOException;
 
-    public abstract NovelGenre[] setGenres();
+    public abstract NovelGenre[] getGenres();
 }
