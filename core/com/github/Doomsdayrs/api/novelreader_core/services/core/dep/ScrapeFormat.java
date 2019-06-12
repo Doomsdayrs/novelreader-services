@@ -63,6 +63,12 @@ public abstract class ScrapeFormat implements Formatter {
     }
 
 
+    /**
+     * Requests the data
+     * @param url URL to fetch
+     * @return the response
+     * @throws IOException errorrrr
+     */
     protected ResponseBody request(String url) throws IOException {
         System.out.println(url);
         URL u = new URL(url);
@@ -70,13 +76,42 @@ public abstract class ScrapeFormat implements Formatter {
         return client.newCall(request).execute().body();
     }
 
-    /** @noinspection unused*/
+    /**
+     * Parses website to a Document
+     * @param URL URL to scrape
+     * @return Document
+     * @throws IOException if anything goes wrong
+     * @noinspection unused
+     */
     protected Document docFromURL(String URL) throws IOException {
         return Jsoup.parse(request(URL).string());
     }
 
+    /**
+     * Fixes URL
+     * @param baseURL the starter of the URL. IE `https://www.novelsite.net` or `https://www.novelsite.net/`
+     * @param target the url to verify, ie '/subURL' or 'subURL'
+     * @return
+     */
+    protected static String verify(String baseURL, String target) {
+        int a = baseURL.length();
+        int b = target.length();
+        if (baseURL.endsWith("/"))
+            if (target.startsWith("/"))
+                target = target.replaceFirst("/", "");
 
-    public int getID() {
+            if (a < b) {
+            String segment = target.substring(0, a);
+            if (!segment.equals(baseURL))
+                return baseURL + target;
+            else return target;
+        } else return baseURL + target;
+    }
+
+    /**
+     * @return ID of formatter
+     */
+    public int getID(){
         return ID;
     }
 
