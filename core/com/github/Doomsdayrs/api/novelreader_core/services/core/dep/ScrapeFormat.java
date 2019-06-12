@@ -91,7 +91,7 @@ public abstract class ScrapeFormat implements Formatter {
      * Fixes URL
      * @param baseURL the starter of the URL. IE `https://www.novelsite.net` or `https://www.novelsite.net/`
      * @param target the url to verify, ie '/subURL' or 'subURL'
-     * @return
+     * @return Fixed URL
      */
     protected static String verify(String baseURL, String target) {
         int a = baseURL.length();
