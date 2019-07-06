@@ -108,8 +108,11 @@ public interface Formatter {
      */
     List<Novel> search(String query) throws IOException;
 
+    // TODO Make an side menu builder
+
     /**
      * ArrayList of genres site has
+     *
      * @return genres
      */
     NovelGenre[] getGenres();
