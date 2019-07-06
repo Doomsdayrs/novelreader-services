@@ -27,6 +27,22 @@ import java.util.List;
  * @noinspection unused
  */
 public interface Formatter {
+    public enum Ordering {
+        TopBottomLatestOldest(0),
+        BottomTopLatestOldest(1);
+        private final int a;
+
+        Ordering(int a) {
+            this.a = a;
+        }
+
+        @Override
+        public String toString() {
+            return "Ordering{" +
+                    "a=" + a +
+                    '}';
+        }
+    }
 
     /**
      * @return Name of the class
@@ -56,11 +72,18 @@ public interface Formatter {
     boolean hasGenres();
 
     /**
-     * Returns true if the chapter list on the page requires another reload
-     *
-     * @return true if the above matches
+     * @return returns true if the chapter list is split into many pages
      */
     boolean isIncrementingChapterList();
+
+    /**
+     * @return returns true if the novel passage is spilt into many pages
+     */
+    boolean isIncrementingPassagePage();
+
+    Ordering chapterOrder();
+
+    Ordering latestOrder();
 
     /**
      * Parse the novel Chapter

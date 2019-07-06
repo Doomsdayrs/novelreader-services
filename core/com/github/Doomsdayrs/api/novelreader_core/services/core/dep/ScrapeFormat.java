@@ -65,6 +65,7 @@ public abstract class ScrapeFormat implements Formatter {
 
     /**
      * Requests the data
+     *
      * @param url URL to fetch
      * @return the response
      * @throws IOException errorrrr
@@ -78,6 +79,7 @@ public abstract class ScrapeFormat implements Formatter {
 
     /**
      * Parses website to a Document
+     *
      * @param URL URL to scrape
      * @return Document
      * @throws IOException if anything goes wrong
@@ -89,8 +91,9 @@ public abstract class ScrapeFormat implements Formatter {
 
     /**
      * Fixes URL
+     *
      * @param baseURL the starter of the URL. IE `https://www.novelsite.net` or `https://www.novelsite.net/`
-     * @param target the url to verify, ie '/subURL' or 'subURL'
+     * @param target  the url to verify, ie '/subURL' or 'subURL'
      * @return Fixed URL
      */
     protected static String verify(String baseURL, String target) {
@@ -100,7 +103,7 @@ public abstract class ScrapeFormat implements Formatter {
             if (target.startsWith("/"))
                 target = target.replaceFirst("/", "");
 
-            if (a < b) {
+        if (a < b) {
             String segment = target.substring(0, a);
             if (!segment.equals(baseURL))
                 return baseURL + target;
@@ -108,10 +111,19 @@ public abstract class ScrapeFormat implements Formatter {
         } else return baseURL + target;
     }
 
+
+    // Variables that can be adjusted
+    private boolean hasSearch = true;
+    private boolean incrementingChapterList = false;
+    private boolean incrementingPassage = false;
+    private boolean hasGenres = false;
+    private Ordering chapterOrdering = Ordering.TopBottomLatestOldest;
+    private Ordering latestOrdering = Ordering.TopBottomLatestOldest;
+
     /**
      * @return ID of formatter
      */
-    public int getID(){
+    public int getID() {
         return ID;
     }
 
@@ -120,27 +132,76 @@ public abstract class ScrapeFormat implements Formatter {
 
     /**
      * On default will return true, stating site does have a search feature
+     *
      * @return Has Search?
      */
     @Override
     public boolean hasSearch() {
-        return true;
+        return hasSearch;
+    }
+
+    public boolean hasSearch(boolean hasSearch) {
+        this.hasSearch = hasSearch;
+        return hasSearch;
     }
 
     /**
      * On default will return true, stating site has genres
+     *
      * @return Has genres?
      */
     @Override
     public boolean hasGenres() {
-        return true;
+        return hasGenres;
+    }
+
+    public boolean hasGenres(boolean hasGenres) {
+        this.hasGenres = hasGenres;
+        return hasGenres;
+    }
+
+    public boolean isIncrementingChapterList() {
+        return incrementingChapterList;
+    }
+
+    public boolean isIncrementingChapterList(boolean incrementingChapterList) {
+        this.incrementingChapterList = incrementingChapterList;
+        return incrementingChapterList;
+    }
+
+    @Override
+    public boolean isIncrementingPassagePage() {
+        return incrementingPassage;
+    }
+
+    public boolean isIncrementingPassagePage(boolean incrementingPassage) {
+        this.incrementingPassage = incrementingPassage;
+        return incrementingPassage;
+    }
+
+    @Override
+    public Ordering chapterOrder() {
+        return chapterOrdering;
+    }
+
+    public Ordering chapterOrder(Ordering chapterOrdering) {
+        this.chapterOrdering = chapterOrdering;
+        return chapterOrdering;
+    }
+
+    @Override
+    public Ordering latestOrder() {
+        return latestOrdering;
+    }
+
+    public Ordering latestOrder(Ordering latestOrdering) {
+        this.latestOrdering = latestOrdering;
+        return latestOrdering;
     }
 
     public abstract String getName();
 
     public abstract String getImageURL();
-
-    public abstract boolean isIncrementingChapterList();
 
     public abstract String getNovelPassage(String URL) throws IOException;
 
