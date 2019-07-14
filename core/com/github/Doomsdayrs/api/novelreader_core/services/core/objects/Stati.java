@@ -2,7 +2,7 @@ package com.github.Doomsdayrs.api.novelreader_core.services.core.objects;
 
 import java.io.Serializable;
 
-/**
+/*
  * This file is part of novelreader-core.
  * novelreader-core is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-/**
+/*
  * This file is part of novelreader-core.
  * novelreader-core is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
