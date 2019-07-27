@@ -29,7 +29,7 @@ public class NovelPage implements Serializable {
     public String description;
     public String[] genres;
     public String[] authors;
-    public Stati status;
+    public Stati status = Stati.UNKNOWN;
     public String[] tags;
     public String[] artists;
     public String language;

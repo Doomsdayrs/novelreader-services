@@ -20,8 +20,20 @@ import java.io.Serializable;
  *
  * @author github.com/doomsdayrs
  */
-public enum Stati  implements Serializable {
-    PUBLISHING(),
-    COMPLETED(),
-    PAUSED()
+public enum Stati implements Serializable {
+    PUBLISHING("Publishing"),
+    COMPLETED("Completed"),
+    PAUSED("Paused"),
+    UNKNOWN("Unknown");
+
+    final String title;
+
+    Stati(String title) {
+        this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return title;
+    }
 }
