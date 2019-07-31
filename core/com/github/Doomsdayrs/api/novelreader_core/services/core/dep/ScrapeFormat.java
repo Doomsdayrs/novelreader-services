@@ -119,6 +119,7 @@ public abstract class ScrapeFormat implements Formatter {
     private boolean hasGenres = false;
     private Ordering chapterOrdering = Ordering.TopBottomLatestOldest;
     private Ordering latestOrdering = Ordering.TopBottomLatestOldest;
+    private boolean hasCloudFlare = false;
 
     /**
      * @return ID of formatter
@@ -129,6 +130,16 @@ public abstract class ScrapeFormat implements Formatter {
 
     // Methods below override the formatter classes methods
 
+
+    @Override
+    public boolean hasCloudFlare() {
+        return hasCloudFlare;
+    }
+
+    public boolean hasCloudFlare(boolean hasCloudFlare) {
+        this.hasCloudFlare = hasCloudFlare;
+        return hasCloudFlare;
+    }
 
     /**
      * On default will return true, stating site does have a search feature

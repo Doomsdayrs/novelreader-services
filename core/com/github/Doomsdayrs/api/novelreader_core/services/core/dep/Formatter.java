@@ -45,6 +45,11 @@ public interface Formatter {
     }
 
     /**
+     * @return True if has cloudflare protection
+     */
+    boolean hasCloudFlare();
+
+    /**
      * @return Name of the class
      */
     String getName();
@@ -132,6 +137,7 @@ public interface Formatter {
     List<Novel> search(String query) throws IOException;
 
     // TODO Make an side menu builder
+
     /**
      * ArrayList of genres site has
      *
