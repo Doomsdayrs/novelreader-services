@@ -3,6 +3,8 @@ package com.github.Doomsdayrs.api.novelreader_core.services.core.dep;
 import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.Novel;
 import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.NovelGenre;
 import com.github.Doomsdayrs.api.novelreader_core.services.core.objects.NovelPage;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 
 import java.io.IOException;
 import java.util.List;
@@ -43,6 +45,11 @@ public interface Formatter {
                     '}';
         }
     }
+
+
+    void setBuilder(Request.Builder builder);
+
+    void setClient(OkHttpClient client);
 
     /**
      * @return True if has cloudflare protection
