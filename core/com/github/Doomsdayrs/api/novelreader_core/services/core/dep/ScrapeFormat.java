@@ -62,6 +62,13 @@ public abstract class ScrapeFormat implements Formatter {
         this.client = client;
     }
 
+    public void setBuilder(Request.Builder builder) {
+        this.builder = builder;
+    }
+
+    public void setClient(OkHttpClient client) {
+        this.client = client;
+    }
 
     /**
      * Requests the data
