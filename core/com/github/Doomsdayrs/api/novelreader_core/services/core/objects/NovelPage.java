@@ -23,6 +23,7 @@ import java.util.List;
  * @author github.com/doomsdayrs
  * @noinspection WeakerAccess
  */
+@Deprecated
 public class NovelPage implements Serializable {
     public String title;
     public String imageURL;

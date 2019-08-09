@@ -32,6 +32,7 @@ import java.util.List;
  *
  * @author github.com/doomsdayrs
  */
+@Deprecated
 public abstract class ScrapeFormat implements Formatter {
 
     private final int ID;

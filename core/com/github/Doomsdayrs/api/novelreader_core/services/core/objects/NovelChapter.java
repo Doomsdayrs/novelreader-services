@@ -21,6 +21,7 @@ import java.io.Serializable;
  * @author github.com/doomsdayrs
  * @noinspection WeakerAccess
  */
+@Deprecated
 public class NovelChapter implements Serializable {
     public String release = "";
     public String chapterNum = "";

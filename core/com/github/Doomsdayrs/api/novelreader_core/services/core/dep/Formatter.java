@@ -28,6 +28,7 @@ import java.util.List;
  * @author github.com/doomsdayrs
  * @noinspection unused
  */
+@Deprecated
 public interface Formatter {
     public enum Ordering {
         TopBottomLatestOldest(0),

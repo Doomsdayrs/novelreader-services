@@ -21,6 +21,7 @@ import java.io.Serializable;
  * @author github.com/doomsdayrs
  * @noinspection WeakerAccess
  */
+@Deprecated
 public class NovelGenre implements Serializable {
     public final String name;
     public boolean isURL;

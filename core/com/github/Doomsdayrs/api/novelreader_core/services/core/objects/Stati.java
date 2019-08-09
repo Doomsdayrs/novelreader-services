@@ -20,6 +20,7 @@ import java.io.Serializable;
  *
  * @author github.com/doomsdayrs
  */
+@Deprecated
 public enum Stati implements Serializable {
     PUBLISHING("Publishing"),
     COMPLETED("Completed"),

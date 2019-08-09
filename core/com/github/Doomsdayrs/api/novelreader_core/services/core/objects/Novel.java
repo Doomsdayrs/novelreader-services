@@ -21,6 +21,7 @@ import java.io.Serializable;
  * @author github.com/doomsdayrs
  * @noinspection WeakerAccess
  */
+@Deprecated
 public class Novel implements Serializable {
     public String title;
     public String link;
